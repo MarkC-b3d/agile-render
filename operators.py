@@ -4,7 +4,7 @@ import webbrowser
 
 class Agile_Cycles(bpy.types.Operator):
     bl_idname = "render.speedy_cycles"
-    bl_label = "Agile cycles"
+    bl_label = "Agile Cycles"
 
     def execute(self, context):
         bpy.context.scene.render.engine = 'CYCLES'
