@@ -1,0 +1,39 @@
+bl_info = {
+    "name": "Agile Render",
+    "description": "Agile Render lets you render faster without the need for custom builds",
+    "author": "Mark C",
+    "version": (0, 0, 1),
+    "blender": (2, 91, 0),
+    "location": "Render Panel",
+    "warning": "",
+    "wiki_url": "https://blendermarket.com/creators/markc3d",
+    "category": "Render" }
+
+import bpy
+import addon_utils
+import webbrowser
+from . panel import LayoutDemoPanel
+from . operators import *
+
+def register():
+    bpy.utils.register_class(LayoutDemoPanel)
+    bpy.utils.register_class(Debug_Mode)
+    bpy.utils.register_class(Agile_Cycles)
+    bpy.utils.register_class(Agile_Viewport)
+    bpy.utils.register_class(Agile_Helper)
+    bpy.utils.register_class(Init_Config)
+    bpy.utils.register_class(Turbo_Cycles)
+
+
+def unregister():
+    bpy.utils.unregister_class(LayoutDemoPanel)
+    bpy.utils.unregister_class(Debug_Mode)
+    bpy.utils.unregister_class(Agile_Cycles)
+    bpy.utils.unregister_class(Agile_Viewport)
+    bpy.utils.unregister_class(Agile_Helper)
+    bpy.utils.unregister_class(Init_Config)
+    bpy.utils.unregister_class(Turbo_Cycles)
+
+
+if __name__ == "__main__":
+    register()
