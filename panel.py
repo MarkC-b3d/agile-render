@@ -38,7 +38,7 @@ class LayoutDemoPanel(bpy.types.Panel):
         row = layout.row(align=True)
         row.operator("agile.render_helper")
 
-        layout.label(text="Speedy Viewport:")
+        layout.label(text="Agile Viewport:")
         row = layout.row()
         row.scale_y = 1.0
         row.operator("render.agile_viewport")
