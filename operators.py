@@ -30,26 +30,26 @@ class Agile_Cycles(bpy.types.Operator):
 
         return {'FINISHED'}
 #Remember to turn off debug mode for release!
-class Debug_Mode(bpy.types.Operator):
-    bl_idname = "render.debug_mode"
-    bl_label = "Debug Mode TURN THIS ON FIRST"
-    def execute(self, context):
+# class Debug_Mode(bpy.types.Operator):
+#     bl_idname = "render.debug_mode"
+#     bl_label = "Debug Mode"
+#     def execute(self, context):
 
-#Cheap hack to make sure only thing on metadata stamp is rendertime.
-        bpy.context.scene.render.use_stamp_date = False
-        bpy.context.scene.render.use_stamp_frame = False
-        bpy.context.scene.render.use_stamp_frame_range = False
-        bpy.context.scene.render.use_stamp_memory = False
-        bpy.context.scene.render.use_stamp_hostname = False
-        bpy.context.scene.render.use_stamp_lens = False
-        bpy.context.scene.render.use_stamp_scene = False
-        bpy.context.scene.render.use_stamp_marker = False
-        bpy.context.scene.render.use_stamp_filename = False
-        bpy.context.scene.render.use_stamp = True
-        bpy.context.scene.render.use_stamp_render_time = True
-        self.report({'INFO'}, "Debug Mode Activated.")
+# #Cheap hack to make sure only thing on metadata stamp is rendertime.
+#         bpy.context.scene.render.use_stamp_date = False
+#         bpy.context.scene.render.use_stamp_frame = False
+#         bpy.context.scene.render.use_stamp_frame_range = False
+#         bpy.context.scene.render.use_stamp_memory = False
+#         bpy.context.scene.render.use_stamp_hostname = False
+#         bpy.context.scene.render.use_stamp_lens = False
+#         bpy.context.scene.render.use_stamp_scene = False
+#         bpy.context.scene.render.use_stamp_marker = False
+#         bpy.context.scene.render.use_stamp_filename = False
+#         bpy.context.scene.render.use_stamp = True
+#         bpy.context.scene.render.use_stamp_render_time = True
+#         self.report({'INFO'}, "Debug Mode Activated.")
 
-        return {'FINISHED'}
+#         return {'FINISHED'}
 
 class Init_Config(bpy.types.Operator):
         bl_idname = "initalise.cycles_config"

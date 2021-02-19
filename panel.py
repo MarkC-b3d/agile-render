@@ -17,10 +17,10 @@ class LayoutDemoPanel(bpy.types.Panel):
 
         # Create a simple row.
         # Big render button
-        layout.label(text="DEBUG MODE", icon='ERROR')
-        row = layout.row()
-        row.scale_y = 1.0
-        row.operator("render.debug_mode")
+        # layout.label(text="DEBUG MODE", icon='ERROR')
+        # row = layout.row()
+        # row.scale_y = 1.0
+        # row.operator("render.debug_mode")
         # Create a simple row.
         # Big render button
         layout.label(text="Init Config", icon='ERROR')
