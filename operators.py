@@ -3,7 +3,7 @@ import addon_utils
 import webbrowser
 
 class Agile_Cycles(bpy.types.Operator):
-    bl_idname = "render.speedy_cycles"
+    bl_idname = "render.agile_cycles"
     bl_label = "Agile Cycles"
 
     def execute(self, context):

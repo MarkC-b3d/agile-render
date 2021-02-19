@@ -1,6 +1,6 @@
 bl_info = {
     "name": "Agile Render",
-    "description": "Agile Render lets you render faster without the need for custom builds",
+    "description": "Agile Render Presets",
     "author": "Mark C",
     "version": (0, 0, 1),
     "blender": (2, 91, 0),

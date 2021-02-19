@@ -1,7 +1,6 @@
 import bpy
 import addon_utils
 import webbrowser
-from . icons import *
 
 class LayoutDemoPanel(bpy.types.Panel):
     """Creates a Panel in the scene context of the properties editor"""
@@ -31,7 +30,7 @@ class LayoutDemoPanel(bpy.types.Panel):
         layout.label(text="Agile Cycles:")
         row = layout.row()
         row.scale_y = 1.0
-        row.operator("render.speedy_cycles")
+        row.operator("render.agile_cycles")
 
         layout.label(text="Render Helper:")
         row = layout.row(align=True)
