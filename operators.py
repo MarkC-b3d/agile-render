@@ -157,10 +157,31 @@ class Agile_Helper(bpy.types.Operator):
             ]
         )
 
+    bounces_enum: bpy.props.EnumProperty(
+
+        name="Light Paths",
+        description="Set light bounces",
+        items=[
+            ('B1', "No Bounces", "0 Light Path Bounces"),
+            ('B2', "2 Bounces", "2 Light Path Bounces"),
+            ('B3', "4 Bounces", "4 Light Path Bounces"),
+            ('B4', "6 Bounces", "6 Light Path Bounces"),
+            ('B5', "8 Bounces", "8 Light Path Bounces"),
+            ('B6', "12 Bounces", "12 Light Path Bounces"),
+            ('B7', "16 Bounces", "16 Light Path Bounces"),
+            ('B8', "20 Bounces", "20 Light Path Bounces")
+            ('B9', "24 Bounces", "24 Light Path Bounces")
+            ('B10', "28 Bounces", "28 Light Path Bounces")
+            ('B11', "32 Bounces", "32 Light Path Bounces")
+        ]
+    )
+
 #itrue = Interior true toggle.
     itrue: bpy.props.BoolProperty(name="Caustics & Clamping")
 #asamp = use_adaptive_sampling
     asamp: bpy.props.BoolProperty(name="Adaptive Sampling", default=True)
+#esimp = enable simplify
+    esimp: bpy.props.BoolProperty(name="Simplify Optimizations", default=True)
 
     def execute(self, context):
         if self.denoise_enum == 'ID1':
@@ -264,19 +285,95 @@ class Agile_Helper(bpy.types.Operator):
         if self.volume_enum == 'V8':
             bpy.context.scene.cycles.volume_preview_step_rate = 0.5
             bpy.context.scene.cycles.volume_step_rate = 0.5
+        
+        if self.bounces_enum == 'B1':
+            bpy.context.scene.cycles.max_bounces = 0
+            bpy.context.scene.cycles.diffuse_bounces = 0
+            bpy.context.scene.cycles.glossy_bounces = 0
+            bpy.context.scene.cycles.transparent_max_bounces = 0
+            bpy.context.scene.cycles.transmission_bounces = 0
+ 
+        if self.bounces_enum == 'B2':
+            bpy.context.scene.cycles.max_bounces = 2
+            bpy.context.scene.cycles.diffuse_bounces = 2
+            bpy.context.scene.cycles.glossy_bounces = 2
+            bpy.context.scene.cycles.transparent_max_bounces = 2
+            bpy.context.scene.cycles.transmission_bounces = 2
+
+        if self.bounces_enum == 'B3':
+            bpy.context.scene.cycles.max_bounces = 4
+            bpy.context.scene.cycles.diffuse_bounces = 4
+            bpy.context.scene.cycles.glossy_bounces = 4
+            bpy.context.scene.cycles.transparent_max_bounces = 4
+            bpy.context.scene.cycles.transmission_bounces = 4
+
+        if self.bounces_enum == 'B4':
+            bpy.context.scene.cycles.max_bounces = 6
+            bpy.context.scene.cycles.diffuse_bounces = 6
+            bpy.context.scene.cycles.glossy_bounces = 6
+            bpy.context.scene.cycles.transparent_max_bounces = 6
+            bpy.context.scene.cycles.transmission_bounces = 6
+  
+        if self.bounces_enum == 'B5':
+            bpy.context.scene.cycles.max_bounces = 8
+            bpy.context.scene.cycles.diffuse_bounces = 8
+            bpy.context.scene.cycles.glossy_bounces = 8
+            bpy.context.scene.cycles.transparent_max_bounces = 8
+            bpy.context.scene.cycles.transmission_bounces = 8
+  
+        if self.bounces_enum == 'B6':
+            bpy.context.scene.cycles.max_bounces = 12
+            bpy.context.scene.cycles.diffuse_bounces = 12
+            bpy.context.scene.cycles.glossy_bounces = 12
+            bpy.context.scene.cycles.transparent_max_bounces = 12
+            bpy.context.scene.cycles.transmission_bounces = 12
+  
+        if self.bounces_enum == 'B7':
+            bpy.context.scene.cycles.max_bounces = 16
+            bpy.context.scene.cycles.diffuse_bounces = 16
+            bpy.context.scene.cycles.glossy_bounces = 16
+            bpy.context.scene.cycles.transparent_max_bounces = 16
+            bpy.context.scene.cycles.transmission_bounces = 16
+  
+        if self.bounces_enum == 'B8':
+            bpy.context.scene.cycles.max_bounces = 20
+            bpy.context.scene.cycles.diffuse_bounces = 20
+            bpy.context.scene.cycles.glossy_bounces = 20
+            bpy.context.scene.cycles.transparent_max_bounces = 20
+            bpy.context.scene.cycles.transmission_bounces = 20
+  
+        if self.bounces_enum == 'B9':
+            bpy.context.scene.cycles.max_bounces = 24
+            bpy.context.scene.cycles.diffuse_bounces = 24
+            bpy.context.scene.cycles.glossy_bounces = 24
+            bpy.context.scene.cycles.transparent_max_bounces = 24
+            bpy.context.scene.cycles.transmission_bounces = 24
+  
+        if self.bounces_enum == 'B10':
+            bpy.context.scene.cycles.max_bounces = 28
+            bpy.context.scene.cycles.diffuse_bounces = 28
+            bpy.context.scene.cycles.glossy_bounces = 28
+            bpy.context.scene.cycles.transparent_max_bounces = 28
+            bpy.context.scene.cycles.transmission_bounces = 28
+  
+        if self.bounces_enum == 'B11':
+            bpy.context.scene.cycles.max_bounces = 32
+            bpy.context.scene.cycles.diffuse_bounces = 32
+            bpy.context.scene.cycles.glossy_bounces = 32
+            bpy.context.scene.cycles.transparent_max_bounces = 32
+            bpy.context.scene.cycles.transmission_bounces = 32
+        
+        if self.esimp:
+
+            bpy.context.scene.render.use_simplify = True
+            bpy.context.scene.cycles.camera_cull_margin = 0.1
+            bpy.context.scene.cycles.ao_bounces_render = 2
 
 
 
+#quick sanity check to make sure cycles and experimental is enabled
         bpy.context.scene.render.engine = 'CYCLES'
         bpy.context.scene.cycles.feature_set = 'EXPERIMENTAL'
-        bpy.context.scene.cycles.max_bounces = 16
-        bpy.context.scene.cycles.diffuse_bounces = 16
-        bpy.context.scene.cycles.glossy_bounces = 16
-        bpy.context.scene.cycles.transparent_max_bounces = 16
-        bpy.context.scene.cycles.transmission_bounces = 16
-        bpy.context.scene.render.use_simplify = True
-        bpy.context.scene.cycles.camera_cull_margin = 0.1
-        bpy.context.scene.cycles.ao_bounces_render = 2
         self.report({'INFO'}, "Preset Applied.")
 
         return {'FINISHED'}
