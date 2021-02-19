@@ -7,6 +7,27 @@ class Agile_Cycles(bpy.types.Operator):
     bl_label = "Agile Cycles"
 
     def execute(self, context):
+        preferences = bpy.context.preferences.addons['cycles'].preferences
+        for device_type in preferences.get_device_types(bpy.context):
+            preferences.get_devices_for_type(device_type[0])
+        for device in preferences.devices:
+            print('Device {} of type {} found'.format(device.name, device.type))
+        if device.type:
+            'OPTIX'
+            bpy.context.scene.render.tile_x = 256
+            bpy.context.scene.render.tile_y = 256
+        elif device.type:
+            'CUDA'
+            bpy.context.scene.render.tile_x = 256
+            bpy.context.scene.render.tile_y = 256
+        elif device.type:
+            'OPENCL'
+            bpy.context.scene.render.tile_x = 256
+            bpy.context.scene.render.tile_y = 256
+        elif device.type:
+            'CPU'
+            bpy.context.scene.render.tile_x = 32
+            bpy.context.scene.render.tile_y = 32
         bpy.context.scene.render.engine = 'CYCLES'
         bpy.context.scene.cycles.feature_set = 'EXPERIMENTAL'
         bpy.context.scene.cycles.device = 'GPU'
@@ -184,6 +205,28 @@ class Agile_Helper(bpy.types.Operator):
     esimp: bpy.props.BoolProperty(name="Simplify Optimizations", default=True)
 
     def execute(self, context):
+        preferences = bpy.context.preferences.addons['cycles'].preferences
+        for device_type in preferences.get_device_types(bpy.context):
+            preferences.get_devices_for_type(device_type[0])
+        for device in preferences.devices:
+            print('Device {} of type {} found'.format(device.name, device.type))
+        if device.type:
+            'OPTIX'
+            bpy.context.scene.render.tile_x = 256
+            bpy.context.scene.render.tile_y = 256
+        elif device.type:
+            'CUDA'
+            bpy.context.scene.render.tile_x = 256
+            bpy.context.scene.render.tile_y = 256
+        elif device.type:
+            'OPENCL'
+            bpy.context.scene.render.tile_x = 256
+            bpy.context.scene.render.tile_y = 256
+        elif device.type:
+            'CPU'
+            bpy.context.scene.render.tile_x = 32
+            bpy.context.scene.render.tile_y = 32
+
         if self.denoise_enum == 'ID1':
             bpy.context.scene.cycles.use_denoising = True
             bpy.context.scene.cycles.denoiser = 'OPTIX'
@@ -205,7 +248,6 @@ class Agile_Helper(bpy.types.Operator):
                 bpy.ops.object.superimagedenoise()
                 # if we're using sid we don't need denoising here
                 bpy.context.scene.cycles.use_denoising = False
-
             else:
                 print('Sid not detected opening download link')
                 webbrowser.open('https://gumroad.com/l/superimagedenoiser', new=2)
@@ -219,7 +261,6 @@ class Agile_Helper(bpy.types.Operator):
                 bpy.ops.object.superimagedenoise()
                 # if we're using sid we don't need denoising here
                 bpy.context.scene.cycles.use_denoising = False
-
             else:
                 print('Sid not detected opening download link')
                 webbrowser.open('https://gumroad.com/l/superimagedenoiser', new=2)
@@ -232,13 +273,9 @@ class Agile_Helper(bpy.types.Operator):
                 bpy.context.scene.sid_settings.quality = 'SUPER'
                 bpy.ops.object.superimagedenoise()
                 bpy.context.scene.cycles.use_denoising = False # if we're using sid we don't need denoising here
-
             else:
                 print('Sid not detected opening download link')
                 webbrowser.open('https://gumroad.com/l/superimagedenoiser', new=2)
-
-
-
 
         if self.samples_enum == 'SC1':
             bpy.context.scene.cycles.samples = 64
@@ -421,8 +458,7 @@ class Agile_Viewport(bpy.types.Operator):
         bpy.context.scene.cycles.ao_bounces_render = 0
         bpy.context.scene.cycles.ao_bounces = 1
         bpy.context.scene.cycles.texture_limit = '1024'
-        bpy.context.scene.render.tile_x = 32  ##TODO This should really be a boolean variable I think
-        bpy.context.scene.render.tile_y = 32  ##TODO This should really be a boolean variable I think
+
         self.report({'INFO'}, "CAUTION CHECK TILESIZE")
 
         return {'FINISHED'}
@@ -432,6 +468,27 @@ class Turbo_Cycles(bpy.types.Operator):
     bl_label = "Turbo Cycles"
 
     def execute(self, context):
+        preferences = bpy.context.preferences.addons['cycles'].preferences
+        for device_type in preferences.get_device_types(bpy.context):
+            preferences.get_devices_for_type(device_type[0])
+        for device in preferences.devices:
+            print('Device {} of type {} found'.format(device.name, device.type))
+        if device.type:
+            'OPTIX'
+            bpy.context.scene.render.tile_x = 256
+            bpy.context.scene.render.tile_y = 256
+        elif device.type:
+            'CUDA'
+            bpy.context.scene.render.tile_x = 256
+            bpy.context.scene.render.tile_y = 256
+        elif device.type:
+            'OPENCL'
+            bpy.context.scene.render.tile_x = 256
+            bpy.context.scene.render.tile_y = 256
+        elif device.type:
+            'CPU'
+            bpy.context.scene.render.tile_x = 32
+            bpy.context.scene.render.tile_y = 32
         bpy.context.scene.render.engine = 'CYCLES'
         bpy.context.scene.cycles.feature_set = 'EXPERIMENTAL'
         bpy.context.scene.cycles.device = 'GPU'
