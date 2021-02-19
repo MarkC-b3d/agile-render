@@ -14,6 +14,8 @@ class LayoutDemoPanel(bpy.types.Panel):
         layout = self.layout
 
         scene = context.scene
+        
+        #DEBUG MODE - ENABLE FOR DEV AND BENCHMARKING
 
         # layout.label(text="DEBUG MODE", icon='ERROR')
         # row = layout.row()
