@@ -199,9 +199,13 @@ class Agile_Helper(bpy.types.Operator):
             #Quick sanity check to make sure sid is installed and enabled
             if 'SuperImageDenoiser' in bpy.context.preferences.addons:
                 print('Detected SID')
+                bpy.context.scene.render.use_compositing = True # make sure compositing is enabled
                 addon_utils.enable('SuperImageDenoiser', default_set=True)
                 bpy.context.scene.sid_settings.quality = 'STANDARD'
                 bpy.ops.object.superimagedenoise()
+                # if we're using sid we don't need denoising here
+                bpy.context.scene.cycles.use_denoising = False
+
             else:
                 print('Sid not detected opening download link')
                 webbrowser.open('https://gumroad.com/l/superimagedenoiser', new=2)
@@ -209,9 +213,13 @@ class Agile_Helper(bpy.types.Operator):
             #Quick sanity check to make sure sid is installed and enabled
             if 'SuperImageDenoiser' in bpy.context.preferences.addons:
                 print('Detected SID')
+                bpy.context.scene.render.use_compositing = True # make sure compositing is enabled
                 addon_utils.enable('SuperImageDenoiser', default_set=True)
                 bpy.context.scene.sid_settings.quality = 'HIGH'
                 bpy.ops.object.superimagedenoise()
+                # if we're using sid we don't need denoising here
+                bpy.context.scene.cycles.use_denoising = False
+
             else:
                 print('Sid not detected opening download link')
                 webbrowser.open('https://gumroad.com/l/superimagedenoiser', new=2)
@@ -219,9 +227,12 @@ class Agile_Helper(bpy.types.Operator):
             #Quick sanity check to make sure sid is installed and enabled
             if 'SuperImageDenoiser' in bpy.context.preferences.addons:
                 print('Detected SID')
+                bpy.context.scene.render.use_compositing = True # make sure compositing is enabled
                 addon_utils.enable('SuperImageDenoiser', default_set=True)
                 bpy.context.scene.sid_settings.quality = 'SUPER'
                 bpy.ops.object.superimagedenoise()
+                bpy.context.scene.cycles.use_denoising = False # if we're using sid we don't need denoising here
+
             else:
                 print('Sid not detected opening download link')
                 webbrowser.open('https://gumroad.com/l/superimagedenoiser', new=2)
