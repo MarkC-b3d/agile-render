@@ -169,9 +169,9 @@ class Agile_Helper(bpy.types.Operator):
             ('B5', "8 Bounces", "8 Light Path Bounces"),
             ('B6', "12 Bounces", "12 Light Path Bounces"),
             ('B7', "16 Bounces", "16 Light Path Bounces"),
-            ('B8', "20 Bounces", "20 Light Path Bounces")
-            ('B9', "24 Bounces", "24 Light Path Bounces")
-            ('B10', "28 Bounces", "28 Light Path Bounces")
+            ('B8', "20 Bounces", "20 Light Path Bounces"),
+            ('B9', "24 Bounces", "24 Light Path Bounces"),
+            ('B10', "28 Bounces", "28 Light Path Bounces"),
             ('B11', "32 Bounces", "32 Light Path Bounces")
         ]
     )
