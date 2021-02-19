@@ -1,6 +1,7 @@
 import bpy
 import addon_utils
 import webbrowser
+from . icons import *
 
 class LayoutDemoPanel(bpy.types.Panel):
     """Creates a Panel in the scene context of the properties editor"""
