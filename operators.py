@@ -455,8 +455,6 @@ class Agile_Viewport(bpy.types.Operator):
         bpy.context.scene.cycles.volume_step_rate = 3.5
         bpy.context.scene.render.use_simplify = True
         bpy.context.scene.cycles.camera_cull_margin = 0.1
-        bpy.context.scene.cycles.ao_bounces_render = 0
-        bpy.context.scene.cycles.ao_bounces = 1
         bpy.context.scene.cycles.texture_limit = '1024'
 
         self.report({'INFO'}, "CAUTION CHECK TILESIZE")
