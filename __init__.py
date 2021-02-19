@@ -17,7 +17,7 @@ from . operators import *
 
 def register():
     bpy.utils.register_class(LayoutDemoPanel)
-    # bpy.utils.register_class(Debug_Mode)
+    # bpy.utils.register_class(Debug_Mode) # To be enabled in dev builds and for benchmarking
     bpy.utils.register_class(Agile_Cycles)
     bpy.utils.register_class(Agile_Viewport)
     bpy.utils.register_class(Agile_Helper)
@@ -27,7 +27,7 @@ def register():
 
 def unregister():
     bpy.utils.unregister_class(LayoutDemoPanel)
-    # bpy.utils.unregister_class(Debug_Mode)
+    # bpy.utils.unregister_class(Debug_Mode) # To be enabled in dev builds and for benchmarking
     bpy.utils.unregister_class(Agile_Cycles)
     bpy.utils.unregister_class(Agile_Viewport)
     bpy.utils.unregister_class(Agile_Helper)

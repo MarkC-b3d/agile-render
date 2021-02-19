@@ -15,14 +15,11 @@ class LayoutDemoPanel(bpy.types.Panel):
 
         scene = context.scene
 
-        # Create a simple row.
-        # Big render button
         # layout.label(text="DEBUG MODE", icon='ERROR')
         # row = layout.row()
         # row.scale_y = 1.0
         # row.operator("render.debug_mode")
-        # Create a simple row.
-        # Big render button
+
         layout.label(text="Init Config", icon='ERROR')
         row = layout.row()
         row.scale_y = 1.0
@@ -33,7 +30,6 @@ class LayoutDemoPanel(bpy.types.Panel):
         row.scale_y = 1.0
         row.operator("render.speedy_cycles")
 
-        # Different sizes in a row
         layout.label(text="Render Helper:")
         row = layout.row(align=True)
         row.operator("agile.render_helper")

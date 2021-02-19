@@ -82,7 +82,6 @@ class Init_Config(bpy.types.Operator):
 
         def execute(self, context):
             #Disable Auto Tile Size - Not required with Agile
-
             if self.dats:
                 if 'render_auto_tile_size' in bpy.context.preferences.addons:
                     print('Auto Tile Size Enabled')
@@ -136,8 +135,8 @@ class Agile_Helper(bpy.types.Operator):
         name="Denoiser",
         description="Select a denoiser",
         items = [
-            ('ID1', "OPTIX", "Enable OPTIX - Fastest"),
-            ('ID2', "OIDN", "Enable OIDN - Best Quality"),
+            ('ID1', "OPTIX", "Enable OPTIX"),
+            ('ID2', "OIDN", "Enable OIDN"),
             ('ID3', "NLM", "Enable NLM"),
             ('ID4', "No Denoiser", "Disable Denoising"),
             ('ID5', "Sid Standard", "Sid Standard"),
@@ -436,12 +435,10 @@ class Agile_Viewport(bpy.types.Operator):
     def execute(self, context):
         bpy.context.scene.render.engine = 'CYCLES'
         bpy.context.scene.cycles.feature_set = 'EXPERIMENTAL'
-        bpy.context.scene.cycles.device = 'GPU'
         bpy.context.scene.cycles.use_square_samples = False
         bpy.context.scene.cycles.use_adaptive_sampling = True
         bpy.context.scene.cycles.use_preview_denoising = True
         bpy.context.scene.cycles.preview_denoiser = 'AUTO'
-        # bpy.context.scene.cycles.denoiser = 'OPTIX'
         bpy.context.scene.cycles.max_bounces = 16
         bpy.context.scene.cycles.diffuse_bounces = 16
         bpy.context.scene.cycles.glossy_bounces = 16
@@ -491,9 +488,8 @@ class Turbo_Cycles(bpy.types.Operator):
             bpy.context.scene.render.tile_y = 32
         bpy.context.scene.render.engine = 'CYCLES'
         bpy.context.scene.cycles.feature_set = 'EXPERIMENTAL'
-        bpy.context.scene.cycles.device = 'GPU'
         bpy.context.scene.cycles.use_adaptive_sampling = True
-        bpy.context.scene.cycles.use_square_samples = False
+        bpy.context.scene.cycles.use_square_samples = False #toggles to false because next command for 300 samples is ok in most cases.
         bpy.context.scene.cycles.samples = 300
         preferences = bpy.context.preferences.addons['cycles'].preferences
         for device_type in preferences.get_device_types(bpy.context):
