@@ -459,7 +459,7 @@ class Agile_Viewport(bpy.types.Operator):
         bpy.context.scene.render.tile_x = 32
         bpy.context.scene.render.tile_y = 32
 
-        self.report({'INFO'}, "CAUTION CHECK TILESIZE")
+        self.report({'INFO'}, "DO NOT ENABLE FOR FINAL RENDER!")
 
         return {'FINISHED'}
 
