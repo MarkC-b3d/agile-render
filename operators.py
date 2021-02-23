@@ -30,7 +30,6 @@ class Agile_Cycles(bpy.types.Operator):
             bpy.context.scene.render.tile_y = 32
         bpy.context.scene.render.engine = 'CYCLES'
         bpy.context.scene.cycles.feature_set = 'EXPERIMENTAL'
-        bpy.context.scene.cycles.device = 'GPU'
         bpy.context.scene.cycles.use_adaptive_sampling = True
         bpy.context.scene.cycles.use_square_samples = False
         bpy.context.scene.cycles.max_bounces = 16
