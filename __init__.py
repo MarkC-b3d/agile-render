@@ -6,7 +6,7 @@ bl_info = {
     "blender": (2, 92, 0),
     "location": "Render Panel",
     "warning": "",
-    "wiki_url": "https://blendermarket.com/creators/markc3d",
+    "wiki_url": "https://github.com/MarkC-b3d/agile-render/issues",
     "category": "Render" }
 
 import bpy
