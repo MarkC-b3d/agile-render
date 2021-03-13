@@ -2,7 +2,7 @@ bl_info = {
     "name": "Agile Render",
     "description": "Agile Render Presets",
     "author": "Mark C",
-    "version": (0, 0, 2),
+    "version": (0, 0, 3),
     "blender": (2, 92, 0),
     "location": "Render Panel",
     "warning": "",
