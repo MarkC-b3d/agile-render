@@ -2,8 +2,8 @@ bl_info = {
     "name": "Agile Render",
     "description": "Agile Render Presets",
     "author": "Mark C",
-    "version": (0, 0, 1),
-    "blender": (2, 91, 0),
+    "version": (0, 0, 2),
+    "blender": (2, 92, 0),
     "location": "Render Panel",
     "warning": "",
     "wiki_url": "https://blendermarket.com/creators/markc3d",
@@ -16,7 +16,7 @@ from . panel import LayoutDemoPanel
 from . operators import *
 
 def register():
-    bpy.utils.register_class(LayoutDemoPanel)
+    bpy.utils.register_class(AgilePanel)
     # bpy.utils.register_class(Debug_Mode) # To be enabled in dev builds and for benchmarking
     bpy.utils.register_class(Agile_Cycles)
     bpy.utils.register_class(Agile_Viewport)
@@ -26,7 +26,7 @@ def register():
 
 
 def unregister():
-    bpy.utils.unregister_class(LayoutDemoPanel)
+    bpy.utils.unregister_class(AgilePanel)
     # bpy.utils.unregister_class(Debug_Mode) # To be enabled in dev builds and for benchmarking
     bpy.utils.unregister_class(Agile_Cycles)
     bpy.utils.unregister_class(Agile_Viewport)

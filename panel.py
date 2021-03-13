@@ -2,7 +2,7 @@ import bpy
 import addon_utils
 import webbrowser
 
-class LayoutDemoPanel(bpy.types.Panel):
+class AgilePanel(bpy.types.Panel):
     """Creates a Panel in the scene context of the properties editor"""
     bl_label = "Agile Cycles"
     bl_idname = "SCENE_PT_layout"
