@@ -12,7 +12,7 @@ bl_info = {
 import bpy
 import addon_utils
 import webbrowser
-from . panel import LayoutDemoPanel
+from . panel import AgilePanel
 from . operators import *
 
 def register():
