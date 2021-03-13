@@ -180,6 +180,7 @@ class Agile_Helper(bpy.types.Operator):
         name="Light Paths",
         description="Set light bounces",
         items=[
+            ('B11', "32 Bounces", "32 Light Path Bounces"),
             ('B1', "No Bounces", "0 Light Path Bounces"),
             ('B2', "2 Bounces", "2 Light Path Bounces"),
             ('B3', "4 Bounces", "4 Light Path Bounces"),
@@ -190,7 +191,12 @@ class Agile_Helper(bpy.types.Operator):
             ('B8', "20 Bounces", "20 Light Path Bounces"),
             ('B9', "24 Bounces", "24 Light Path Bounces"),
             ('B10', "28 Bounces", "28 Light Path Bounces"),
-            ('B11', "32 Bounces", "32 Light Path Bounces")
+            ('B12', "64 Bounces", "64 Light Path Bounces"),
+            ('B13', "128 Bounces", "128 Light Path Bounces"),
+            ('B14', "256 Bounces", "256 Light Path Bounces"),
+            ('B15', "512 Bounces", "512 Light Path Bounces"),
+            ('B16', "768 Bounces", "768 Light Path Bounces"),
+            ('B17', "1024 Bounces", "1024 Light Path Bounces")
         ]
     )
 
@@ -407,6 +413,48 @@ class Agile_Helper(bpy.types.Operator):
             bpy.context.scene.cycles.glossy_bounces = 32
             bpy.context.scene.cycles.transparent_max_bounces = 32
             bpy.context.scene.cycles.transmission_bounces = 32
+ 
+        if self.bounces_enum == 'B12':
+            bpy.context.scene.cycles.max_bounces = 64
+            bpy.context.scene.cycles.diffuse_bounces = 64
+            bpy.context.scene.cycles.glossy_bounces = 64
+            bpy.context.scene.cycles.transparent_max_bounces = 64
+            bpy.context.scene.cycles.transmission_bounces = 64
+ 
+        if self.bounces_enum == 'B13':
+            bpy.context.scene.cycles.max_bounces = 128
+            bpy.context.scene.cycles.diffuse_bounces = 128
+            bpy.context.scene.cycles.glossy_bounces = 128
+            bpy.context.scene.cycles.transparent_max_bounces = 128
+            bpy.context.scene.cycles.transmission_bounces = 128
+ 
+        if self.bounces_enum == 'B14':
+            bpy.context.scene.cycles.max_bounces = 128
+            bpy.context.scene.cycles.diffuse_bounces = 128
+            bpy.context.scene.cycles.glossy_bounces = 128
+            bpy.context.scene.cycles.transparent_max_bounces = 128
+            bpy.context.scene.cycles.transmission_bounces = 128
+ 
+        if self.bounces_enum == 'B15':
+            bpy.context.scene.cycles.max_bounces = 512
+            bpy.context.scene.cycles.diffuse_bounces = 512
+            bpy.context.scene.cycles.glossy_bounces = 512
+            bpy.context.scene.cycles.transparent_max_bounces = 512
+            bpy.context.scene.cycles.transmission_bounces = 512
+ 
+        if self.bounces_enum == 'B16':
+            bpy.context.scene.cycles.max_bounces = 768
+            bpy.context.scene.cycles.diffuse_bounces = 768
+            bpy.context.scene.cycles.glossy_bounces = 768
+            bpy.context.scene.cycles.transparent_max_bounces = 768
+            bpy.context.scene.cycles.transmission_bounces = 768
+ 
+        if self.bounces_enum == 'B17':
+            bpy.context.scene.cycles.max_bounces = 1024
+            bpy.context.scene.cycles.diffuse_bounces = 1024
+            bpy.context.scene.cycles.glossy_bounces = 1024
+            bpy.context.scene.cycles.transparent_max_bounces = 1024
+            bpy.context.scene.cycles.transmission_bounces = 1024
         
         if self.esimp:
 
