@@ -3,7 +3,7 @@ Agile Render add-on
 
 AGILE RENDER:
 
-This add-on contains only presets that enable you to render faster with minimal (if any) difference in image quality, to the extent that blender python allows, it is not an external render engine either; this means you don't need to use an experimental or custom build of Blender to get the benefits of Agile Render.
+This add-on contains presets that enable you to render faster with minimal (if any) difference in image quality, to the extent that blender python allows, it is not an external render engine either; this means you don't need to use an experimental or custom build of Blender to get the benefits of Agile Render.
 
 There are 2 main presets, Agile and Turbo:
 
